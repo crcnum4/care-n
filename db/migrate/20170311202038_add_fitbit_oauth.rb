@@ -4,5 +4,6 @@ class AddFitbitOauth < ActiveRecord::Migration
       t.integer :user_id
       t.string :authorization
       t.string :access_token
+    end
   end
 end
