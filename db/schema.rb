@@ -11,12 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312011208) do
+ActiveRecord::Schema.define(version: 20170312030957) do
 
   create_table "fitbit_oauths", force: :cascade do |t|
     t.integer "user_id"
     t.string  "authorization"
     t.string  "access_token"
+  end
+
+  create_table "fitbits", force: :cascade do |t|
+    t.string   "profile",    default: "", null: false
+    t.string   "activity",   default: "", null: false
+    t.integer  "heartrate",  default: 0,  null: false
+    t.string   "nutrition",  default: "", null: false
+    t.integer  "sleep",      default: 0,  null: false
+    t.integer  "weight",     default: 0,  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "user_id"
+    t.integer  "steps"
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "calories"
+    t.string   "mealtype"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sleeps", force: :cascade do |t|
+    t.integer  "user_id"
+    t.float    "hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
