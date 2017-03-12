@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311202038) do
+ActiveRecord::Schema.define(version: 20170312011208) do
 
-  create_table "fitbit_oauth", force: :cascade do |t|
+  create_table "fitbit_oauths", force: :cascade do |t|
     t.integer "user_id"
     t.string  "authorization"
     t.string  "access_token"

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "user/registrations"}
+  
+  get "user/fitbit/auth", to: "users#fitbitauth", as: "fitbit_auth"
+  get "/auth/fitbit/callback", to: "sessions#create", as: "fitbit_callback"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

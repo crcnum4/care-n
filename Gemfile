@@ -16,9 +16,16 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 
 gem 'omniauth'
-gem 'omniauth-fitbit-oauth2'
+gem 'omniauth-fitbit'
+
+gem 'seedbank'
+gem 'faker'
 
 gem 'rest-client'
+
+gem 'bootstrap-sass', '~> 3.3.6'
+
+gem 'devise-bootstrapped'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
