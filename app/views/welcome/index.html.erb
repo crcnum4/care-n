@@ -1,0 +1,23 @@
+<div class="container-fluid" id="home">
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row" class="jumbo-section">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <div id="logo">
+                        <%= image_tag("logo.svg", width: '80%', ) %>
+                    </div>
+                </div>
+            </div>
+            <div class="row jumbotext">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h3>Get the most out of your personal care by<br/> making the most of your health gadgets!</h3>
+                </div>
+            <div class="row jumbotext">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <%= link_to "Signup", new_user_registration_path, class: "btn btn-lg btn-success" %>
+                    <%= link_to "Login", new_user_session_path, class: "btn btn-lg btn-info" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

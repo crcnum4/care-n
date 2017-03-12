@@ -37,7 +37,7 @@ end
         @entry.activity = "steps"
         @entry.profile = ""
         @entry.heartrate = Faker::Number.between(96, 110)
-        @entry.steps = Faker::Number.between(4000, 12000)
+        @entry.steps = Faker::Number.between(4000, 14000)
         @entry.save!
         
         @sleep = Sleep.new
@@ -49,26 +49,26 @@ end
         @breakfast = Food.new(mealtype: "breakfast")
         @breakfast.actiondate = date
         @breakfast.user_id = user.id
-        @breakfast.calories = Faker::Number.between(350, 1200)
+        @breakfast.calories = Faker::Number.between(250, 800)
         @breakfast.save!
         
         @lunch = Food.new(mealtype: "lunch")
         @lunch.actiondate = date
         @lunch.user_id = user.id
-        @lunch.calories = Faker::Number.between(500, 1500)
+        @lunch.calories = Faker::Number.between(300, 1100)
         @lunch.save!
         
         @dinner = Food.new(mealtype: "dinner")
         @dinner.actiondate = date
         @dinner.user_id = user.id
-        @dinner.calories = Faker::Number.between(900, 2200)
+        @dinner.calories = Faker::Number.between(600, 1500)
         @dinner.save!
         
         if (1..4).to_a.sample == 4
             @snack = Food.new(mealtype: "snack")
             @snack.actiondate = date
             @snack.user_id = user.id
-            @snack.calories = Faker::Number.between(50, 400)
+            @snack.calories = Faker::Number.between(0, 400)
             @snack.save!
         end
     end

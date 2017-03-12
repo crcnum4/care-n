@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312064118) do
+ActiveRecord::Schema.define(version: 20170312080939) do
 
   create_table "fitbit_oauths", force: :cascade do |t|
     t.integer "user_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170312064118) do
     t.datetime "updated_at",              null: false
     t.integer  "user_id"
     t.integer  "steps"
-    t.date     "actiondate"
+    t.datetime "actiondate"
   end
 
   create_table "foods", force: :cascade do |t|
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170312064118) do
     t.string   "mealtype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date     "actiondate"
+    t.datetime "actiondate"
   end
 
   create_table "sleeps", force: :cascade do |t|
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20170312064118) do
     t.float    "hours"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date     "actiondate"
+    t.datetime "actiondate"
   end
 
   create_table "users", force: :cascade do |t|
