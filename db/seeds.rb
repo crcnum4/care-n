@@ -32,7 +32,7 @@ end
         print("creating day: #{count} for user: #{user.id}")
         date = day.days.ago
         @entry = Fitbit.new
-        @entry.created_at = date
+        @entry.actiondate = date
         @entry.user_id = user.id
         @entry.activity = "steps"
         @entry.profile = ""
@@ -41,32 +41,32 @@ end
         @entry.save!
         
         @sleep = Sleep.new
-        @sleep.created_at = date
+        @sleep.actiondate = date
         @sleep.user_id = user.id
         @sleep.hours = Faker::Number.between(6, 9)
         @sleep.save!
         
         @breakfast = Food.new(mealtype: "breakfast")
-        @breakfast.created_at = date
+        @breakfast.actiondate = date
         @breakfast.user_id = user.id
         @breakfast.calories = Faker::Number.between(350, 1200)
         @breakfast.save!
         
         @lunch = Food.new(mealtype: "lunch")
-        @lunch.created_at = date
+        @lunch.actiondate = date
         @lunch.user_id = user.id
         @lunch.calories = Faker::Number.between(500, 1500)
         @lunch.save!
         
         @dinner = Food.new(mealtype: "dinner")
-        @dinner.created_at = date
+        @dinner.actiondate = date
         @dinner.user_id = user.id
         @dinner.calories = Faker::Number.between(900, 2200)
         @dinner.save!
         
         if (1..4).to_a.sample == 4
             @snack = Food.new(mealtype: "snack")
-            @snack.created_at = date
+            @snack.actiondate = date
             @snack.user_id = user.id
             @snack.calories = Faker::Number.between(50, 400)
             @snack.save!

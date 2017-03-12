@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get "user/fitbit/auth", to: "users#fitbitauth", as: "fitbit_auth"
   get "/auth/fitbit/callback", to: "sessions#create", as: "fitbit_callback"
   
-  post "alexa/test", to: "foods#test", as: "alexa_test"
+  # get "alexa/test", to: "foods#test", as: "alexa_test"
+  get "alexa/test", to: "foods#test", as: "alexa_test"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
