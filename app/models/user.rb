@@ -8,9 +8,28 @@ class User < ActiveRecord::Base
   has_many :fitbits
   has_many :sleeps
   
-  def healthrank
-    sleeps = self.sleeps
-    sleepbase = self.sleeps.last(5)
+  def sleeprank(days)
+    sleeps = self.sleeps.first(days)
+    totalhours = 0
+    sleeps.each do |sleep|
+      totalhours += sleep.hours
+    end
+      
+    sleepbase = self.sleeps.last(30)
+    sleep_base_total = 0
+    sleepbase.each do |sleep|
+      sleep_base_total += sleep.hours
+    end
+    sleeprank = 0
+    sleeprank = ((totalhours / days) / 9)
+    if sleeprank > 0.93
+      sleeprank = 0.93
+    end
+    return sleeprank
+  end
+  
+  def healthrank(days)
+    
   end
   
   
